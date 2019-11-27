@@ -4,7 +4,8 @@ namespace App\Controller;
 
  use Symfony\Component\HttpFoundation\Response;
 
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+// use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class LuckyController extends AbstractController
@@ -28,11 +29,15 @@ class LuckyController extends AbstractController
     public function accueil($slug)
 
 
-    {
+    {   
+        
 
         $comments=["Les Libellules","Les Arbres","Les Oiseaux"];
         // return new Response(sprintf('<html><body> BIENVENUE DANS LA NATURE % s !!</body></html>',$slug));
-           return $this->render('article/show.html.twig',[
+          dump($slug,$this); 
+        
+        
+        return $this->render('article/show.html.twig',[
                'title'=> ucwords(str_replace('-',' ',$slug)),
                'comments'=>$comments,
            ]) ;
