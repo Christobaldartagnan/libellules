@@ -2,8 +2,9 @@
 namespace App\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-class LibelluleController{
+class LibelluleController extends AbstractController{
 
 /**
  * @Route("/libellule")

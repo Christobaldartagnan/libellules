@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title%}
+ReadMe {{title}}
+
+{% endblock %}
+
+
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{title}}</title>
+</head>
+<body>
+    <h1>LA NATURE</h1>
+
+    <p> La forêt des Landes (en gascon : las lanas) de Gascogne est un massif forestier du sud-ouest de la France situé en Nouvelle-Aquitaine. D'une superficie de près d'un million d'hectares1, elle est la plus grande forêt artificielle d'Europe occidentale.
+
+Bordée par l'océan Atlantique (côte d'Argent), elle forme un vaste triangle couvrant trois départements (Gironde, Landes et Lot-et-Garonne), dont les sommets sont matérialisés par la pointe de Grave (au nord), Hossegor (au sud) et Nérac (à l'est).
+
+Principalement privée, elle comprend quelques parties domaniales situées près du cordon littoral atlantique. </p>
+    <p> Les odonates sont un ordre d'insectes à corps allongé, dotés de deux paires d'ailes membraneuses généralement transparentes, et dont les yeux composés et généralement volumineux leur permettent de chasser efficacement leurs proies. Ils sont aquatiques à l'état larvaire et terrestres à l'état adulte. Ce sont des prédateurs, que l'on peut rencontrer occasionnellement dans tout type de milieu naturel, mais qui se retrouvent plus fréquemment aux abords des zones d'eau douce à saumâtre, stagnante à courante, dont ils ont besoin pour se reproduire.
+
+En langue française, le terme de libellules est en général employé sensu lato pour désigner les odonates, qui regroupent deux sous-ordres : les demoiselles (zygoptères) et les libelles1 ou libellules stricto sensu (anisoptères). En 1996, Günter Bechly a regroupé les deux anciens sous-ordres Anisoptera et Anisozygoptera en Epiproctophora notamment par leur analogie au stade larvaire (présence d'épiproctes et non de lamelles caudales comme chez les Zygoptères). L'ancien sous-ordre des Anisozygoptères (Anisozygoptera) ne compte que deux à quatre espèces selon les auteurs et les études génétiques2. </p>
+    <p> Un arbre est une plante ligneuse terrestre comportant un tronc sur lequel s'insèrent des branches ramifiées portant le feuillage dont l'ensemble forme le houppier, appelé aussi couronne.
+
+Les arbres sont des plantes pérennes qui vivent plusieurs années, de plusieurs décennies à plusieurs siècles, et dans de rares cas plusieurs millénaires.
+
+Selon les estimations, la planète compte entre 60 000 et 100 000 espèces d'arbres.
+
+Les formations végétales dominées par des arbres poussant les uns à côté des autres sont des forêts, mais les arbres peuvent aussi croître de manière plus ou moins isolée hors des forêts (dans la savane notamment)1.
+
+Ils jouent un rôle majeur dans le fonctionnement écologique terrestre, en raison de leur capacité à stocker le carbone (leur production de matière sèche annuelle correspond à deux tiers de la production mondiale des plantes terrestres2), à prendre une part active dans le cycle de l'eau et de manière générale à constituer les écosystèmes complexes que sont les forêts, sources et refuges de biodiversité.
+
+Ils constituent aussi pour les sociétés humaines une ressource considérable de matériaux (principalement du bois), de denrées (notamment des fruits) et de multiples services. Ils occupent dans presque toutes les cultures du monde une place pratique et symbolique importante. </p>
+
+    <h2>Commentaires ({{comments|length}}):</h2>
+    <ul>
+  {% for comment in comments %}
+
+  <li>{{comment}}</li>
+  {%endfor %}
+    </ul>
+
+</body>
+</html>
+{% endblock  %}
