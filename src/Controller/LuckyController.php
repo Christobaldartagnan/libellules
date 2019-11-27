@@ -4,7 +4,7 @@ namespace App\Controller;
 
  use Symfony\Component\HttpFoundation\Response;
 
-use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 class LuckyController
 {
     /*
@@ -19,6 +19,10 @@ class LuckyController
             '<html><body>Lucky number: '.$number.'</body></html>'
         );
     }
+
+    /**
+     * @Route("/lucky/accueil/{slug}")
+     */
     public function accueil($slug)
     {
         return new Response(sprintf('<html><body> BIENVENUE DANS LA NATURE % s !!</body></html>',$slug)

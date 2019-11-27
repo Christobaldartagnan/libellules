@@ -13,13 +13,13 @@ number:
 depart:
     path:       /lucky/accueil
     controller: App\Controller\LuckyController::bienvenu
-accueil:
-    path:       /lucky/accueil/{slug}
-    controller: App\Controller\LuckyController::accueil 
+# accueil:
+#     path:       /lucky/accueil/{slug}
+#     controller: App\Controller\LuckyController::accueil 
 
-libellule:
-    path:       /libellule
-    controller: App\Controller\LibelluleController::voler
+# libellule:
+#     path:       /libellule
+#     controller: App\Controller\LibelluleController::voler
 
 
 
