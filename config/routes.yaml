@@ -1,10 +1,28 @@
-#index:
+# index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
 
 # config/routes.yaml
 
 # the "app_lucky_number" route name is not important yet
-app_lucky_number:
-    path: /lucky/number
+
+number:
+    path:       /lucky/number
     controller: App\Controller\LuckyController::number
+  
+depart:
+    path:       /lucky/accueil
+    controller: App\Controller\LuckyController::bienvenu
+accueil:
+    path:       /lucky/accueil/{slug}
+    controller: App\Controller\LuckyController::accueil 
+
+libellule:
+    path:       /libellule
+    controller: App\Controller\LibelluleController::voler
+
+
+
+#  accueil:
+#      path: /
+#      controller: App\Controller\AccueilController::accueil
