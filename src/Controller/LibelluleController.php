@@ -8,7 +8,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class LibelluleController extends AbstractController{
 
 /**
- * @Route("/libellule")
+ * @Route("/libellule" ,name="app_libellule_voler")
  */
 public function voler(){
 

@@ -2,16 +2,17 @@
 // src/Controller/LuckyController.php
 namespace App\Controller;
 
- use Symfony\Component\HttpFoundation\Response;
+use Psr\Log\LoggerInterface;
+use Symfony\Component\HttpFoundation\Response;
 
-// use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class LuckyController extends AbstractController
 {
     /*
-    *@Route("lucky/number")
+    *@Route("lucky/number",mame="number")
     */
     public function number()
     {
@@ -24,30 +25,55 @@ class LuckyController extends AbstractController
     }
 
     /**
-     * @Route("/lucky/accueil/{slug}")
+     * @Route("/lucky/accueil/{slug}", name="app_lucky_accueil")
      */
     public function accueil($slug)
-
 
     {   
         
 
         $comments=["Les Libellules","Les Arbres","Les Oiseaux"];
         // return new Response(sprintf('<html><body> BIENVENUE DANS LA NATURE % s !!</body></html>',$slug));
-          dump($slug,$this); 
-        
+                
         
         return $this->render('article/show.html.twig',[
                'title'=> ucwords(str_replace('-',' ',$slug)),
+               'slug'=>$slug,
                'comments'=>$comments,
            ]) ;
         
     }
+
+    
+    public function asteroide(){
+        $comments=["Les Libellules","Les Arbres","Les Oiseaux"];
+        return $this->render('article/show.html.twig',[
+            'title'=> 'Astéroides  taste like honey',
+            
+            'comments'=>$comments,
+        ]);
+
+    }
+
+
     public function bienvenu()
     {
-        return new Response('<html><body> BIENVENUE DANS LA NATURE !!</body></html>'
-            
-        );
+        $comments=["Les Libellules","Les Arbres","Les Oiseaux"];       
+        
+        return $this->render('article/homepage.html.twig') ;
+    }
+
+
+    /**
+     * @Route("/lucky/accueil/{slug}/heart", name="app_lucky_heart",methods={"POST"})
+     */
+    public function toggleArticleHeart($slug, LoggerInterface $logger){
+
+        $logger->info("l'article a été liké !");
+
+        return $this->json(['hearts'=>rand(5,100)]);
+
+
     }
     
 }

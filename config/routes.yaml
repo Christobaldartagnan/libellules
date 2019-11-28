@@ -13,6 +13,10 @@ number:
 depart:
     path:       /lucky/accueil
     controller: App\Controller\LuckyController::bienvenu
+
+asteroide:
+    path:       /asteroide
+    controller: App\Controller\LuckyController::asteroide
 # accueil:
 #     path:       /lucky/accueil/{slug}
 #     controller: App\Controller\LuckyController::accueil 
